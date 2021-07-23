@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .tabs {
+            list-style: none;
+            margin: 0;
+            padding: 10px 10px 0 10px;
+            background: brown;
+            overflow: hidden;
+        }
+
+        .tabs li {
+            float: left;
+            margin-right: 8px;
+            padding: 8px 20px;
+            cursor: pointer;
+            color: #000;
+            background: white;
+        }
+
+        #tab2 {
+            opacity: 0.5;
+        }
+
+        .panel {
+            padding: 20px;
+            border: 1px solid brown;
+            min-height: 100px;
+            border-top: 0 none;
+        }
+
+        #panel2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<ul class="tabs">
+    <li id="tab1" onclick="one()">Tab One</li>
+    <li id="tab2" onclick="two()">Tab Two</li>
+</ul>
+<div class="panel" id="panel1">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa cumque dolorum eos facere,
+    nulla repellendus sunt velit? Accusamus alias, deserunt dolor maiores odit officia rerum sunt. Dicta, neque?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore laboriosam libero numquam? Cum delectus deserunt
+    dignissimos dolores enim eos mollitia nobis, provident repellendus voluptatibus. Et, magni, nostrum! A, sed
+    voluptate!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa dolore, error ipsa, natus nisi perferendis
+    quibusdam quis temporibus ullam voluptate, voluptatum? Ab animi corporis dolorum error laborum nisi nobis.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem beatae delectus distinctio dolorum error
+    est excepturi, facere ipsam nemo numquam perspiciatis porro, ut voluptas voluptatum! Aliquid dolores dolorum
+    voluptatum!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos eum ipsam itaque iusto laudantium magni necessitatibus
+    nemo, officiis quaerat, qui quis, ratione reprehenderit suscipit! Animi inventore minus necessitatibus quam ratione?
+</div>
+<div class="panel" id="panel2">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid cumque eligendi voluptas voluptates!
+    Asperiores consequuntur debitis fugiat inventore laborum natus nisi pariatur porro reprehenderit, repudiandae
+    suscipit velit voluptas voluptatem.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae cum debitis dolore explicabo ipsam quisquam
+    quod recusandae. Cumque doloremque error et expedita facere laboriosam necessitatibus rem saepe suscipit voluptatem?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, distinctio fugiat hic ipsa iusto maxime sed. Autem
+    consequatur corporis deserunt dolores error et excepturi nobis numquam placeat porro quis, ullam!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi corporis doloremque itaque minima molestiae
+    mollitia nisi non odit, perferendis porro, rem sed sint tempora ut voluptate voluptatibus. Asperiores, repellat.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque laboriosam pariatur quam repudiandae. Eum ex, in
+    magni mollitia necessitatibus neque officiis provident quae quis quo quod soluta velit vero voluptatum.
+</div>
+
+<script>
+    function get(content) {
+        return document.getElementById(content);
+    }
+
+    function one() {
+        get('panel1').style.display = 'block';
+        get('tab1').style.opacity = '1';
+        get('tab2').style.opacity = '0.5';
+        get('panel2').style.display = 'none';
+
+    }
+
+    function two() {
+        get('panel2').style.display = 'block';
+        get('tab1').style.opacity = '0.5';
+        get('tab2').style.opacity = '1';
+        get('panel1').style.display = 'none';
+    }
+</script>
+</body>
+</html>

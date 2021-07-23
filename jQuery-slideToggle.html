@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut, consectetur consequuntur distinctio
+    iusto nobis tenetur. Consequuntur cumque doloremque natus optio repellat totam voluptates. At esse eum ex iusto
+    voluptatibus.
+</p>
+<button>Button</button>
+<script src="jquery.js"></script>
+<script>
+    $("p").css({
+        "background" : "cyan",
+        "padding" : "20px"
+    });
+
+    $("button").click(function () {
+        $("p").slideToggle("800");
+    });
+
+
+</script>
+
+</body>
+</html>

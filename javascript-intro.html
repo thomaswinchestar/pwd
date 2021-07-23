@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p id="note">Hello World</p>
+<button onclick="app()">Button</button>
+<button onclick="appStyleClose()">Button Style Close</button>
+<script>
+    function app(){
+        const note = document.getElementById('note');
+        note.innerText = "Hello JavaScript";
+        note.style.color = "red";
+        note.style.background = "cyan";
+    }
+    function appStyleClose(){
+        const noteStyleClose = document.getElementById('note');
+        noteStyleClose.innerText = "Hello World";
+        noteStyleClose.style.color = "black";
+        noteStyleClose.style.background = "white";
+    }
+</script>
+</body>
+</html>

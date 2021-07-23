@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #overlay {
+            background: rgba(0,0,0,0.5);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #dialog {
+            position: absolute;
+            width: 33%;
+            height: 200px;
+            left: 33%;
+            top: 15%;
+            background: white;
+            border: 4px solid #ddd;
+        }
+        #dialog h2 {
+            font-size: 18px;
+            margin: 0;
+            padding: 8px;
+            background: #ddd;
+        }
+        #dialog h2 a{
+            float: right;
+            color: red;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        #overlay:target {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h1>App</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque aut consectetur debitis laborum minus
+    nobis, quam quisquam quo reiciendis rem reprehenderit, sed sequi sunt tempore veniam, voluptates voluptatum!</p>
+<button onclick="show()">Open Dialog</button>
+<a href="#overlay">Show Dialog</a>
+<div id="overlay">
+    <div id="dialog">
+        <h2>Dialog Title
+            <a href="#">&times</a>
+        </h2>
+    </div>
+</div>
+
+
+<!--<script>-->
+<!--    function show(){-->
+<!--        document.getElementById('overlay').style.display = "block";-->
+<!--       document.getElementById('dialog').style.display = "block";-->
+<!--    }-->
+<!--    function hide() {-->
+<!--        document.getElementById('overlay').style.display = "none";-->
+<!--        document.getElementById('dialog').style.display = "none";-->
+<!--    }-->
+<!--</script>-->
+</body>
+</html>

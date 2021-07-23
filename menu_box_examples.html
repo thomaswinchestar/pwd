@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box    {
+        width: 350px;
+        border: 1px solid red;
+        margin-bottom: 10px;
+    }
+    .box h3 {
+        padding: 8px;
+        background: red;
+        color: #fff;
+        margin: 0;
+        cursor: pointer;
+    }
+    .box h3.up {
+        background : brown;
+    }
+</style>
+<body>
+<script src="jquery.js"></script>
+<script>
+    $(function (){
+        $('h3').click(function (){
+            var box = $(this).parent();
+            $('ul', box).slideToggle();
+            $(this).toggleClass('up');
+        });
+    });
+    $(document).ready(function(){
+
+    });
+</script>
+<div class="box">
+    <h3>Box Title</h3>
+    <ul>
+        <li><a href="#">Menu Item</a></li>
+        <li><a href="#">Menu Item</a></li>
+        <li><a href="#">Menu Item</a></li>
+    </ul>
+</div>
+<div class="box">
+    <h3>Box Title</h3>
+    <ul>
+        <li><a href="#">Menu Item</a></li>
+        <li><a href="#">Menu Item</a></li>
+        <li><a href="#">Menu Item</a></li>
+    </ul>
+</div>
+<div class="box">
+    <h3>Box Title</h3>
+    <ul>
+        <li><a href="#">Menu Item</a></li>
+        <li><a href="#">Menu Item</a></li>
+        <li><a href="#">Menu Item</a></li>
+    </ul>
+</div>
+<!--<script src="jquery.js"></script>-->
+<!--<script>-->
+<!--    $('h3').click(function (){-->
+<!--        var box = $(this).parent();-->
+<!--        $('ul', box).slideToggle();-->
+<!--        $(this).toggleClass('up');-->
+<!--    });-->
+<!--</script>-->
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+            margin-bottom: 100px;
+        }
+        h1 {
+            margin: 15px;
+        }
+        ul#tasks {
+            margin: 15px;
+            padding: 15px;
+        }
+        ul#done {
+            margin: 15px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>List <span class="badge badge-danger">0</span></h1>
+    <ul id="tasks" class="list-group bg-primary m-4 p-4">
+        <h3 class="text-light">Tasks</h3>
+    </ul>
+    <ul id="done" class="list-group bg-success m-4 p-4">
+        <h3 class="text-light">Done</h3>
+    </ul>
+    <form action="" class="form-inline">
+        <div class="form-group">
+            <label>
+                <input type="text" class="form-control mx-sm-4"/>
+            </label>
+            <button class="btn btn-outline-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<script src="jquery.js"></script>
+<script>
+    $('button').click(function (){
+        const text = $('input[type=text]').val();
+        if(!text) return false;
+
+        const del = $('<a class="btn close">').attr('href', '#').html('&times;').click(function () {
+            $(this).parent().remove();
+            $('h1 span').html($('#tasks li').length);
+        });
+
+        const checkbox = $('<input type="checkbox" class="form-check-input">')
+            .attr('type', 'checkbox')
+            .click(function () {
+                if ($(this).is(':checked')) {
+                    $(this).parent().appendTo("#done");
+                } else {
+                    $(this).parent().appendTo("#tasks");
+                }
+
+                $('h1 span').html($('#tasks li').length);
+
+            });
+
+        $('<li class="px-5">')
+            .addClass('list-group-item')
+            .html(text)
+            .prepend(checkbox)
+            .append(del)
+            .appendTo('#tasks');
+
+        $('h1 span').html($('#tasks li').length);
+        $(`input[type=text]`).val('').focus();
+    });
+
+    $('input[type=text]').keydown(function (e){
+        if (e.which === 13) $('button').click();
+    })
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
